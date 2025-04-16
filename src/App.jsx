@@ -82,3 +82,17 @@ export default function App() {
     </div>
   );
 }
+{submitted && (
+  <Button
+    className="w-full mt-4 bg-gray-200 text-black"
+    onClick={() => {
+      setAnswers(Array(25).fill(''));
+      setSubmitted(false);
+      setScore(0);
+      setResult([]);
+      setName('');
+    }}
+  >
+    다시 시작하기
+  </Button>
+)}
