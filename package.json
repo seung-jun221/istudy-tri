@@ -1,5 +1,6 @@
 {
   "name": "student-auto-grader",
+  "homepage": "https://seung-jun221.github.io/istudy-tri"
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
