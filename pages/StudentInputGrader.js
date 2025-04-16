@@ -1,6 +1,19 @@
 import { useState } from 'react';
-import { Card, CardContent } from '../components/ui/card';
-import { Button } from '../components/ui/button';
+
+const Card = ({ children, className }) => (
+  <div className={`rounded-xl border p-4 shadow ${className}`}>{children}</div>
+);
+const CardContent = ({ children, className }) => (
+  <div className={className}>{children}</div>
+);
+const Button = ({ children, ...props }) => (
+  <button
+    {...props}
+    className={`p-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50 ${props.className}`}
+  >
+    {children}
+  </button>
+);
 
 export default function StudentInputGrader() {
   const [answers, setAnswers] = useState(Array(25).fill(''));
@@ -68,7 +81,7 @@ export default function StudentInputGrader() {
             ))}
           </div>
 
-          <Button className="w-full bg-blue-600 hover:bg-blue-700" onClick={handleSubmit} disabled={submitted || !name}>
+          <Button className="w-full" onClick={handleSubmit} disabled={submitted || !name}>
             제출하고 채점하기
           </Button>
         </CardContent>
